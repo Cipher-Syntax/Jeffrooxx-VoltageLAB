@@ -1,17 +1,18 @@
 export const student = {
-    name: 'Juan Dela Cruz',
-    program: 'BSIT - Electrical Technology',
-    school: '[University Name]',
-    year: '4th Year',
-    email: 'juan.delacruz@email.com',
-    phone: '+63 912 345 6789',
-    location: 'Davao City, Philippines',
-    linkedin: 'linkedin.com/in/juandelacruz',
-    availability: 'Open for internship and project work',
+    name: "Jeffrey A. Toong Jr.",
+    program: "BSIT — Electrical Tecnology",
+    school: "Zamboanga Peninsula Polytechnic State University",
+    year: "Batch 2026",
+    email: "your.email@gmail.com",           
+    phone: "+63 912 345 6789",                
+    location: "Zamboanga City, Philippines",
+    linkedin: "linkedin.com/in/yourprofile",   
+    availability: "Available for Work",
     bio: [
-        'I am a BSIT Electrical Technology student focused on safe, efficient, and practical electrical systems for real-world environments.',
-        'My hands-on training covers wiring, PLC programming, motor controls, AutoCAD electrical layouts, and field-ready safety practices.',
-    ],
+        "Hi, I'm Jeffrey A. Toong Jr. — a BSIT graduate majoring in Electrical Tecnology at Zamboanga Peninsula Polytechnic State University. I specialize in translating architectural concepts into precise, well-detailed technical drawings.",
+        "My training covers everything from freehand sketching and orthographic projection to AutoCAD drafting, 3D modeling in SketchUp, and architectural visualization. I take pride in the cleanliness and accuracy of every plate I produce.",
+        "I'm driven by a passion for design and construction, and I aspire to work as an architectural drafter and eventually become a licensed architect."
+    ]
 };
 
 export const navItems = [
@@ -101,15 +102,73 @@ export const certificates = [
     { title: 'IoT in Industry', sub: 'Industrial Internet of Things Seminar', year: '2024', color: '#8a6cff' },
 ];
 
+// export const galleryItems = [
+//     { title: 'Lab Work', label: 'Bench testing and wiring practice', type: 'lab', span: true },
+//     { title: 'Wiring', label: 'Conduit and termination layout', type: 'wiring' },
+//     { title: 'PLC Setup', label: 'Ladder logic and I/O testing', type: 'plc' },
+//     { title: 'Panel Board', label: 'Breaker and busbar planning', type: 'panel' },
+//     { title: 'OJT Site', label: 'Field maintenance documentation', type: 'site', span: true },
+//     { title: 'Circuit Build', label: 'Breadboard and component assembly', type: 'circuit' },
+//     { title: 'Schematics', label: 'Electrical drafting plates', type: 'schematic' },
+//     { title: 'Teamwork', label: 'Safety briefing and task planning', type: 'team' },
+// ];
+
+// 1. Import your actual images from the assets folder
+// import proj1 from '../../../assets/images/project1.jpg';
+// import proj2 from '../../../assets/images/project2.jpg';
+// import proj3 from '../../../assets/images/project3.jpg';
+
 export const galleryItems = [
-    { title: 'Lab Work', label: 'Bench testing and wiring practice', type: 'lab', span: true },
-    { title: 'Wiring', label: 'Conduit and termination layout', type: 'wiring' },
-    { title: 'PLC Setup', label: 'Ladder logic and I/O testing', type: 'plc' },
-    { title: 'Panel Board', label: 'Breaker and busbar planning', type: 'panel' },
-    { title: 'OJT Site', label: 'Field maintenance documentation', type: 'site', span: true },
-    { title: 'Circuit Build', label: 'Breadboard and component assembly', type: 'circuit' },
-    { title: 'Schematics', label: 'Electrical drafting plates', type: 'schematic' },
-    { title: 'Teamwork', label: 'Safety briefing and task planning', type: 'team' },
+    {
+        title: 'Lab Work',
+        label: 'Bench testing and wiring practice',
+        type: 'lab',
+        span: true,
+        image: null,
+    },
+    {
+        title: 'Wiring',
+        label: 'Conduit and termination layout',
+        type: 'wiring',
+        image: null,
+    },
+    {
+        title: 'PLC Setup',
+        label: 'Ladder logic and I/O testing',
+        type: 'plc',
+        image: null,
+    },
+    {
+        title: 'Panel Board',
+        label: 'Breaker and busbar planning',
+        type: 'panel',
+        image: null,
+    },
+    {
+        title: 'OJT Site',
+        label: 'Field maintenance documentation',
+        type: 'site',
+        span: true,
+        image: null,
+    },
+    {
+        title: 'Circuit Build',
+        label: 'Breadboard and component assembly',
+        type: 'circuit',
+        image: null,
+    },
+    {
+        title: 'Schematics',
+        label: 'Electrical drafting plates',
+        type: 'schematic',
+        image: null,
+    },
+    {
+        title: 'Teamwork',
+        label: 'Safety briefing and task planning',
+        type: 'team',
+        image: null,
+    },
 ];
 
 export const contacts = [

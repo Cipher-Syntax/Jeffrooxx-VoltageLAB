@@ -1,48 +1,47 @@
-const diagramStyles = {
-    lab: { stroke: '#f5c100', accent: '#00a6d6' },
-    wiring: { stroke: '#ff6b2b', accent: '#f5c100' },
-    plc: { stroke: '#00a6d6', accent: '#f5c100' },
-    panel: { stroke: '#f5c100', accent: '#00b86b' },
-    site: { stroke: '#00b86b', accent: '#f5c100' },
-    circuit: { stroke: '#8a6cff', accent: '#f5c100' },
-    schematic: { stroke: '#e23b3b', accent: '#00a6d6' },
-    team: { stroke: '#f5c100', accent: '#ff6b2b' },
-};
-
-const GalleryDiagram = ({ type }) => {
-    const color = diagramStyles[type] || diagramStyles.lab;
-
-    return (
-        <svg viewBox="0 0 160 110" className="absolute inset-0 h-full w-full p-7" aria-hidden="true">
-            <defs>
-                <pattern id={`grid-${type}`} width="12" height="12" patternUnits="userSpaceOnUse">
-                    <path d="M12 0H0V12" fill="none" stroke="#6f6f5b" strokeWidth="0.5" opacity="0.35" />
-                </pattern>
-            </defs>
-            <rect width="160" height="110" fill={`url(#grid-${type})`} />
-            <path d="M18 26H48L63 42H94L112 25H142" fill="none" stroke={color.stroke} strokeWidth="2.5" />
-            <path d="M18 82H45L61 65H88L108 82H142" fill="none" stroke={color.accent} strokeWidth="2.5" />
-            <rect x="64" y="25" width="34" height="34" fill="none" stroke={color.stroke} strokeWidth="2" />
-            <circle cx="48" cy="26" r="5" fill={color.stroke} />
-            <circle cx="94" cy="42" r="5" fill={color.accent} />
-            <circle cx="108" cy="82" r="5" fill={color.stroke} />
-            <line x1="30" y1="12" x2="30" y2="98" stroke="#6f6f5b" strokeWidth="0.8" opacity="0.4" />
-            <line x1="130" y1="12" x2="130" y2="98" stroke="#6f6f5b" strokeWidth="0.8" opacity="0.4" />
-        </svg>
-    );
-};
-
 const GalleryItem = ({ item }) => {
     return (
-        <article className={`fade-in group relative min-h-[220px] overflow-hidden border border-slate-200 bg-slate-50 transition-colors duration-300 hover:border-[#d49b00] dark:border-[#2b2b18] dark:bg-[#111111] dark:hover:border-[#f5c100] ${item.span ? 'sm:col-span-2' : ''}`}>
-            <GalleryDiagram type={item.type} />
-            <div className="absolute inset-0 bg-white/0 transition-colors duration-300 group-hover:bg-white/86 dark:group-hover:bg-[#0a0a0a]/88" />
-            <div className="absolute inset-x-0 bottom-0 p-5">
-                <p className="font-mono text-[10px] uppercase text-[#d49b00] dark:text-[#f5c100]">{item.type}</p>
-                <h3 className="mt-2 text-xl font-black uppercase text-slate-950 dark:text-[#f2f2dd]">{item.title}</h3>
-                <p className="mt-1 max-w-[280px] text-[13px] leading-6 text-slate-600 dark:text-[#bdbd9b]">{item.label}</p>
+        <div className="relative cursor-pointer aspect-square bg-transparent group fade-in [perspective:1000px]">
+            {/* 3D Flip Container */}
+            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+
+                {/* --- FRONT OF CARD --- */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] border border-slate-200 dark:border-[#2b2b18] rounded-lg overflow-hidden bg-slate-50 dark:bg-[#111111]">
+                    {item.image ? (
+                        <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center text-slate-300 dark:text-[#333333] font-mono text-[10px] tracking-[2px]">
+                            NO IMAGE
+                        </div>
+                    )}
+                </div>
+
+                {/* --- BACK OF CARD --- */}
+                {/* Note the initial rotateY(180deg) to flip it backwards by default */}
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] border border-[#ff6b2b] dark:border-[#f5c100] rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] flex flex-col items-center justify-center p-6 text-center shadow-lg shadow-[#ff6b2b]/10 dark:shadow-[#f5c100]/5">
+
+                    {item.tag && (
+                        <p className="font-mono text-[10px] tracking-[2px] text-[#ff6b2b] dark:text-[#f5c100] uppercase mb-2">
+                            {item.tag}
+                        </p>
+                    )}
+
+                    <h3 className="font-sans text-[20px] font-bold text-slate-900 dark:text-white tracking-[0.5px] mb-2 leading-tight">
+                        {item.title}
+                    </h3>
+
+                    {item.description && (
+                        <p className="font-mono text-[11px] text-slate-500 dark:text-slate-400 mt-2 tracking-[0.5px] leading-relaxed">
+                            {item.description}
+                        </p>
+                    )}
+                </div>
+
             </div>
-        </article>
+        </div>
     );
 };
 
