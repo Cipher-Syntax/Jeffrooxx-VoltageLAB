@@ -1,8 +1,18 @@
+import { useState } from 'react';
+
 const GalleryItem = ({ item }) => {
+    // 1. Add state to track the flip
+    const [isFlipped, setIsFlipped] = useState(false);
+
     return (
-        <div className="relative cursor-pointer aspect-square bg-transparent group fade-in [perspective:1000px]">
-            {/* 3D Flip Container */}
-            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div
+            className="relative cursor-pointer aspect-square bg-transparent fade-in [perspective:1000px]"
+            onClick={() => setIsFlipped(!isFlipped)}
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+        >
+            {/* 3D Flip Container: Uses the state variable to apply the flip instead of group-hover */}
+            <div className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${isFlipped ? '[transform:rotateY(180deg)]' : ''}`}>
 
                 {/* --- FRONT OF CARD --- */}
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] border border-slate-200 dark:border-[#2b2b18] rounded-lg overflow-hidden bg-slate-50 dark:bg-[#111111]">
@@ -20,7 +30,6 @@ const GalleryItem = ({ item }) => {
                 </div>
 
                 {/* --- BACK OF CARD --- */}
-                {/* Note the initial rotateY(180deg) to flip it backwards by default */}
                 <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] border border-[#ff6b2b] dark:border-[#f5c100] rounded-lg overflow-hidden bg-white dark:bg-[#0a0a0a] flex flex-col items-center justify-center p-6 text-center shadow-lg shadow-[#ff6b2b]/10 dark:shadow-[#f5c100]/5">
 
                     {item.tag && (
