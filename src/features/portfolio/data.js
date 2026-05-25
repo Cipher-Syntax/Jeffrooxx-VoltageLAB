@@ -9,9 +9,9 @@ export const student = {
     linkedin: "linkedin.com/in/yourprofile",   
     availability: "Available for Work",
     bio: [
-        "Hi, I'm Jeffrey A. Toong Jr. — a BSIT graduate majoring in Electrical Tecnology at Zamboanga Peninsula Polytechnic State University. I specialize in translating architectural concepts into precise, well-detailed technical drawings.",
-        "My training covers everything from freehand sketching and orthographic projection to AutoCAD drafting, 3D modeling in SketchUp, and architectural visualization. I take pride in the cleanliness and accuracy of every plate I produce.",
-        "I'm driven by a passion for design and construction, and I aspire to work as an architectural drafter and eventually become a licensed architect."
+        "Hi, I'm Jeffrey A. Toong Jr. — a BSET graduate majoring in Electrical Technology at Zamboanga Peninsula Polytechnic State University. I specialize in wiring installation, motor control, Pneumatic system and other related skills.",
+        "My training covers everything from residential installation to industry related subjects such as rewinding of three phase motors, troubleshooting of generators and working on live wires/ panels. I take pride in the safety and cleanliness of my work.",
+        "I'm driven by a passion to improve the livelihood and efficiency of our dear consumers. With these abilities I possess, I aspire to take my career by a step forward — to be a Registered Master Electrician."
     ]
 };
 

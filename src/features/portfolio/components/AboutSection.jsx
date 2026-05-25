@@ -23,8 +23,7 @@ const AboutSection = () => {
                                 <p key={paragraph}>{paragraph}</p>
                             ))}
                             <p>
-                                The work here highlights practical training: reading plans, calculating loads,
-                                wiring panels, documenting circuits, and checking every connection before power-up.
+                                The work here highlights practical training: rewinding of induction motors, troubleshooting, calculating loads, wiring panels, documenting circuits, and live wire installations.
                             </p>
                         </div>
 
